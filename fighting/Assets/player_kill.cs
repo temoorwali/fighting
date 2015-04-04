@@ -4,15 +4,16 @@ using System.Collections;
 
 public class player_kill : MonoBehaviour {
 	public Camera cam;
-	public GameObject cam_pos_empty;
+	//public GameObject cam_pos_empty;
 	public  GameObject player;
-	//public static bool stop_enemy_script;
-	//public GameObject manager;
+	public static bool stop_enemy_script = false;
+	public GameObject manager;
 	public Light blood_light_;
 	// Use this for initialization
 	void Start () {
 
-//	    blood_light_.enabled = false;
+
+
 	}
 	 
 	IEnumerator blood()
@@ -24,21 +25,33 @@ public class player_kill : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-						//if (Vector3.Distance (transform.position, player.transform.position) < 1.0f) 
+						if (player == null) 
 			            {
-						  //StartCoroutine ("blood");
+			//manager.GetComponent<enemy_script>().enabled=false;
+
 						
 		                }
 	}
-	void OnCollisionEnter(Collision obj)
+
+	IEnumerator wait()
+	{
+		//Debug.Log("enum");
+		manager.GetComponent<AudioSource> ().enabled = false;
+		yield return new WaitForSeconds (1.0f);
+		Application.LoadLevel("Total score");
+	}
+	void OnCollisionExit(Collision obj)
 	{
 		if (obj.gameObject.tag == "player") 
 		{
+
 			health_score.health --;
-			//stop_enemy_script=true;
+			StartCoroutine("blood");
 			if(health_score.health == 0 )
 			{
 			Destroy(obj.gameObject);
+				StartCoroutine("wait");
+				//stop_enemy_script = true;
 			//cam.transform.position = cam_pos_empty.transform.position + new Vector3(5,5,5);
 			}
 

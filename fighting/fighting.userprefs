@@ -1,15 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\fire.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\start_walk.cs">
     <Files>
-      <File FileName="Assets\zomb_anim.cs" Line="22" Column="37" />
-      <File FileName="fighting.sln" Line="52" Column="1" />
-      <File FileName="Assets\health_score.cs" Line="23" Column="6" />
-      <File FileName="Assets\background_sound.cs" Line="1" Column="1" />
-      <File FileName="Assets\run2.cs" Line="1" Column="1" />
-      <File FileName="Assets\player_kill.cs" Line="1" Column="1" />
-      <File FileName="Assets\enemy_script.cs" Line="1" Column="1" />
-      <File FileName="Assets\fire.cs" Line="37" Column="38" />
+      <File FileName="Assets\start_walk.cs" Line="23" Column="22" />
+      <File FileName="Assets\enemy_script.cs" Line="20" Column="22" />
+      <File FileName="Assets\countdown.cs" Line="1" Column="1" />
+      <File FileName="Assets\fire.cs" Line="1" Column="1" />
+      <File FileName="Assets\health_score.cs" Line="19" Column="14" />
+      <File FileName="Assets\player_kill.cs" Line="40" Column="39" />
+      <File FileName="Assets\final_score.cs" Line="1" Column="1" />
+      <File FileName="Assets\zomb_anim.cs" Line="1" Column="1" />
+      <File FileName="Assets\run2.cs" Line="19" Column="28" />
+      <File FileName="Assets\zomb_anim2.cs" Line="1" Column="1" />
+      <File FileName="Assets\rotate.cs" Line="1" Column="1" />
+      <File FileName="Assets\menu_script.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

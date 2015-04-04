@@ -4,36 +4,55 @@ using System.Collections;
 public class enemy_script : MonoBehaviour {
 	public GameObject enemies_1;
 	public GameObject enemies_2;
-	public GameObject cam_pos_emp;
-	 GameObject enem_1;
-     GameObject enem_2;
-	 GameObject enem_3;
+	public GameObject enemies_3;
+	public GameObject player;
+	GameObject enem_rand;
+	GameObject enem_1;
+	GameObject enem_2;
+	GameObject enem_3;
+	public GameObject manager;
 	int a;
 	// Use this for initialization
+	IEnumerator wait()
+	{
+		yield return new WaitForSeconds (9.0f);
+		Debug.Log ("enemy_start");
+		InvokeRepeating ("inst1", 1.0f, 1.0f);
+		InvokeRepeating ("inst2", 1.0f, 3.0f);
+		InvokeRepeating ("inst3", 1.0f, 3.0f);
+		InvokeRepeating ("inst_rand", 1.0f, 2.5f);
+	}
 	void Start () 
 	{
-						InvokeRepeating ("inst1", 1.0f, 1.0f);
-						InvokeRepeating ("inst2", 1.0f, 3.0f);
-						InvokeRepeating ("inst3", 1.0f, 2.5f);
+		StartCoroutine ("wait");
 	}
 
 	void inst1()
 	{
-		enem_1=(GameObject)	Instantiate (enemies_1, new Vector3 (Random.Range (cam_pos_emp.transform.position.x + 7, cam_pos_emp.transform.position.x - 7), 6.2758f, cam_pos_emp.transform.position.z + 15), Quaternion.identity);
+		if(player != null)
+		enem_1=(GameObject)	Instantiate (enemies_1, new Vector3 (Random.Range (player.transform.position.x + 7, player.transform.position.x - 7), 6.2758f, player.transform.position.z + 7), Quaternion.identity);
 	}
 	void inst2()
 	{
-		enem_2=(GameObject)	Instantiate (enemies_2, new Vector3 (Random.Range (cam_pos_emp.transform.position.x + 7, cam_pos_emp.transform.position.x - 7), 6.2758f, cam_pos_emp.transform.position.z + 15), Quaternion.identity);
+		if(player != null)
+		enem_2=(GameObject)	Instantiate (enemies_2, new Vector3 (Random.Range (player.transform.position.x + 7, player.transform.position.x - 7), 6.2758f, player.transform.position.z + 7), Quaternion.identity);
 	}
 	void inst3()
 	{
+		if(player != null)
+		enem_3=(GameObject)	Instantiate (enemies_3, new Vector3 (Random.Range (player.transform.position.x + 7, player.transform.position.x - 7), 6.2758f, player.transform.position.z + 7), Quaternion.identity);
+	}
+	void inst_rand()
+	{
 		if (rand() == 1)
 		{
-			enem_3=(GameObject)	Instantiate (enemies_1, new Vector3 (Random.Range (cam_pos_emp.transform.position.x + 2, cam_pos_emp.transform.position.x - 2), 6.2758f, cam_pos_emp.transform.position.z + 15), Quaternion.identity);
+			if(player != null)
+			enem_rand=(GameObject)	Instantiate (enemies_2, new Vector3 (Random.Range (player.transform.position.x + 2, player.transform.position.x - 2), 6.2758f, player.transform.position.z + 7), Quaternion.identity);
 		}
 		if (rand() == 2)
 		{
-			enem_3=(GameObject)	Instantiate (enemies_2, new Vector3 (Random.Range (cam_pos_emp.transform.position.x + 2, cam_pos_emp.transform.position.x - 2), 6.2758f, cam_pos_emp.transform.position.z + 15), Quaternion.identity);
+			if(player != null)
+			enem_rand=(GameObject)	Instantiate (enemies_3, new Vector3 (Random.Range (player.transform.position.x + 2, player.transform.position.x - 2), 6.2758f, player.transform.position.z + 7), Quaternion.identity);
 		}
 
 	}
@@ -45,11 +64,13 @@ public class enemy_script : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
+
+	
 		rand ();
-		Destroy (enem_1,2.5f);
-		Destroy (enem_2,2.5f);
-		Destroy (enem_3,2.5f);
-		//if (player_kill.stop_enemy_script == true) 
+		Destroy (enem_1,4.0f);
+		Destroy (enem_2,4.0f);
+		Destroy (enem_3,4.0f);
+		Destroy (enem_rand,4.0f);
 						
 	}
 }

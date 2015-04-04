@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class rotate : MonoBehaviour {
-	public GameObject cam_pos_emp;
+	public GameObject player;
 	// Use this for initialization
 	void Start () {
 		//anim = GetComponent<Animator>();
@@ -12,6 +12,7 @@ public class rotate : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		transform.LookAt (cam_pos_emp.transform.position);
+		if(player != null)
+		transform.LookAt (player.transform.position);
 	}
 }

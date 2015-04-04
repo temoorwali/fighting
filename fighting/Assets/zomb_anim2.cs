@@ -13,22 +13,20 @@ public class zomb_anim2 : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		transform.Translate (Vector3.forward * 1 * Time.deltaTime);
+		//transform.Translate (Vector3.forward * 1 * Time.deltaTime);
 
 		if(player != null &&(Vector3.Distance(player.transform.position,transform.position) < 4))
 		{
-			//transform.GetComponent<Animator> ().SetTrigger ("attack");
-			//anim.SetTrigger ("attack");
-			//ScriptableObject race=gameObject.GetComponent<fire>();
+			// no need in zombie2 :p
 			
 		}
-		if(fire.fall == true)
+		if(fire.fall2 == true)
 		{
 			//Debug.Log("pass");
 			transform.GetComponent<Animator>().SetTrigger("die");
-			transform.collider.enabled=false;
-			//Destroy(enemy_script.enem_2,0.1f);
-			fire.fall=false;
+			//transform.collider.enabled=false;
+			///zomb_anim.meters_inc_by_10=true;
+			fire.fall2=false;
 		}
 	}
 }

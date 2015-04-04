@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\akdjnasld.cs" />
      <Compile Include="Assets\bullet.cs" />
      <Compile Include="Assets\bullet_hit.cs" />
      <Compile Include="Assets\bullet_shell.cs" />
@@ -72,7 +73,7 @@
      <None Include="Assets\Mobile_Citizen_Human&amp;Zombie_free\ArtResources\Shader\CharacterShader_mobile.shader" />
      <None Include="Assets\Military_Pistol_01_Free_v2\Docs\Military_Pistol_Free_Unity_Info.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>D:/Panagame/fighting/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/temOor_wali/Documents/GitHub/fighting/fighting/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
